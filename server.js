@@ -18,6 +18,15 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars",exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
+mongoose.connect("mongodb://localhost/news_scraped");
+var db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function(){
+    console.log("conection to mongoose!");
+});
+
+
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
     console.log("Listening on PORT " + port);
