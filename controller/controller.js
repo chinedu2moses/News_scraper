@@ -18,7 +18,7 @@ router.get("/scrape", function (req, res) {
         var titlesArray = [];
 
         $(".c-entry-box--compact_title").each(function(i, element) {
-            var result {};
+            var result = {};
 
             result.title = $(this)
             .children("a")
@@ -67,3 +67,15 @@ router.get("/articles", function(req, res){
         }
     });
 });
+
+router.get("/article-json", function(req, res){
+    Article.find({}, function(err, doc){
+        if (err) {
+            console.log(err);
+        } else {
+           res.json(doc); 
+        }
+    });
+});
+
+module.exports = router;
