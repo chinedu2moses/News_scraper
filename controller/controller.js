@@ -8,16 +8,16 @@ var cheerio = require("cheerio");
 var Comment = require("../models/Comment.js");
 var Article = require("../models/Article.js");
 
-router.get("/", function(req, res){
+router.get("/", function(req, res) {
     res.redirect("/articles");
 });
 
 router.get("/scrape", function (req, res) {
-    request("http://www.theverge.com", function (error, response, html) {
+    request("http://www.theverge.com", function(error, response, html) {
         var $ = cheerio.load(html);
         var titlesArray = [];
 
-        $(".c-entry-box--compact_title").each(function(i, element) {
+        $(".c-entry-box--compact__title").each(function(i, element) {
             var result = {};
 
             result.title = $(this)
