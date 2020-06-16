@@ -14,7 +14,7 @@
   "author": "Chinedu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chinedu2moses/News_scraper/issues"
+    "url": "https://github.com/chinedu2moses/News_scraper"
   },
   "homepage": "https://github.com/chinedu2moses/News_scraper#readme",
   "dependencies": {
@@ -25,5 +25,8 @@
     "mongoose": "^5.9.18",
     "morgan": "^1.10.0",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "handlebars": "^4.5.0"
   }
 }
